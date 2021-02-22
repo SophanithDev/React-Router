@@ -2,7 +2,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-const Shop = () => {
+function Shop() {
   useEffect(() => {
     fetchItems();
   }, []);
@@ -20,11 +20,9 @@ const Shop = () => {
 
   return (
     <div>
-      {items.map((item) => (
-        <li key={item.itemId}>{item.name}</li>
-      ))}
+      {items && items.map((item) => <h3 key={item.itemId}>{item.name}</h3>)}
     </div>
   );
-};
+}
 
 export default Shop;
